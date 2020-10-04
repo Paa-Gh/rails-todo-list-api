@@ -6,7 +6,7 @@ ruby '2.7.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+#gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -44,3 +44,11 @@ gem 'devise'
 gem 'devise_token_auth'
 gem 'faker'
 gem 'active_model_serializers'
+
+#sqlite3 for test and development db and postgres for production db
+group :test, :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
